@@ -110,6 +110,8 @@ set clipboard=unnamed
 if &diff
 	set scrollbind
 	set cursorbind
+	" Keep diff windows same size when resizing whole window
+	autocmd vimResized * wincmd =
 	"set lines=999
 else
 	if has('gui')
