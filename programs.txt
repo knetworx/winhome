@@ -1,0 +1,20 @@
+Visual Studio
+- Visual Assist X
+- VisVim
+- UnrealVS
+  - Widen standard bar
+- P4EditVS
+Vim
+ScreenToGif
+Keyframe MP
+PowerToys (Microsoft)
+KeePass
+Dropbox
+Parsec
+Visual Studio Code
+Chrome
+Slack
+Springboard
+UGS
+P4V
+Git
