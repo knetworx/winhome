@@ -1,0 +1,23 @@
+Windows
+- File Explorer
+  - Show extensions
+  - Show hidden files
+  - Decrease space between items
+  - Display full path in title bar
+
+Git
+- Set global name and email
+
+Visual Studio
+- Install plugins
+- Import settings
+- Import VAX settings
+
+Chrome
+- Login to Gmail account
+
+Vim
+- Get .vimrc (and any other files necessary for config)
+  - Put them all in your Windows home folder (e.g. C:\Users\nick.heilmann)
+- Make sure Mac-only and Unix-only commands aren't used
+- Check for autocmd/au lines that cause repetitive re-processing
