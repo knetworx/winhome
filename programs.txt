@@ -18,3 +18,5 @@ Springboard
 UGS
 P4V
 Git
+OBS
+Bitwarden

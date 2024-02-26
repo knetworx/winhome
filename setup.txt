@@ -19,5 +19,16 @@ Chrome
 Vim
 - Get .vimrc (and any other files necessary for config)
   - Put them all in your Windows home folder (e.g. C:\Users\nick.heilmann)
+  - Rather than copying, make a hard link/junction to files/folders using command prompt as administrator
+    - mklink /H .vimrc winhome\.vimrc
+    - mklink /J .vim winhome\.vim
 - Make sure Mac-only and Unix-only commands aren't used
 - Check for autocmd/au lines that cause repetitive re-processing
+
+Chrome
+- Login using GMail
+- Install native component for tab switcher
+- Disable key bindings for Global Speed extension
+
+OBS
+- Import/setup scene information
