@@ -12,6 +12,8 @@ Visual Studio
 - Install plugins
 - Import settings
 - Import VAX settings
+- From the Engine Plugins folder, clone the Visual Studio Tools extension
+  - https://github.com/microsoft/vc-ue-extensions#unreal-engine-plugin-for-visual-studio
 
 Chrome
 - Login to Gmail account
@@ -32,3 +34,8 @@ Chrome
 
 OBS
 - Import/setup scene information
+
+P4V
+- Set font to small
+- Set double-click options
+- Set vim as diff tool, add -d flag
