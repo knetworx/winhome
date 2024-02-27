@@ -4,19 +4,24 @@ Visual Studio
 - UnrealVS
   - Widen standard bar
 - P4EditVS
-Vim
-ScreenToGif
-Keyframe MP
-PowerToys (Microsoft)
-KeePass
-Dropbox
-Parsec
-Visual Studio Code
+Bitwarden
 Chrome
+Discord
+Dropbox?
+Epic Games Launcher
+Git
+Groupy
+KeePass
+Keyframe MP
+OBS
+P4V
+Paint.NET
+Parsec
+Photos (Microsoft - App Store)
+PowerToys (Microsoft)
+ScreenToGif
 Slack
 Springboard
 UGS
-P4V
-Git
-OBS
-Bitwarden
+Vim
+Visual Studio Code
