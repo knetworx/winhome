@@ -1,0 +1,20 @@
+"map <ESC> <ESC>:noh<CR>
+"noremap <ESC> :noh<CR><ESC>
+nnoremap <Esc><Esc> :let @/ = ""<CR>
+set autoindent
+set clipboard=unnamed
+set gdefault
+set history=2000
+set hlsearch
+set ignorecase
+set incsearch
+set keymodel=startsel
+set noexpandtab
+set nowrap
+set scrolloff=3
+set selection=inclusive
+set shiftwidth=4
+set showcmd
+set smartcase
+set softtabstop=4
+set tabstop=4
