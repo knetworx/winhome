@@ -13,6 +13,7 @@ Git
 Groupy
 KeePass
 Keyframe MP
+nVidia driver from S:
 OBS
 P4V
 Paint.NET
