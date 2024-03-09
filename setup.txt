@@ -10,8 +10,13 @@ Git
 
 Visual Studio
 - Install plugins
+  - UnrealVS
+  - VsVim
+  - P4EditVS
 - Import settings
 - Import VAX settings
+  - Default export location is %APPDATA%\VisualAssist
+  - Settings are in this repo in VisualStudioSettings folder
 - From the Engine Plugins folder, clone the Visual Studio Tools extension
   - https://github.com/microsoft/vc-ue-extensions#unreal-engine-plugin-for-visual-studio
 
