@@ -2,7 +2,7 @@
 "noremap <ESC> :noh<CR><ESC>
 nnoremap <Esc><Esc> :let @/ = ""<CR>
 set autoindent
-set clipboard=unnamed
+"set clipboard=unnamed
 set gdefault
 set history=2000
 set hlsearch
