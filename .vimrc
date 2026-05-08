@@ -187,7 +187,7 @@ set complete=.,w,b,u,k,s,i,d,]
 set completeopt=menu,menuone,longest
 set copyindent
 set preserveindent
-set diffopt=filler,vertical,context:10,foldcolumn:0,iwhite
+set diffopt=filler,vertical,context:20,foldcolumn:0,iwhite
 set display=lastline
 set gdefault
 set foldmethod=expr
@@ -197,7 +197,11 @@ set guicursor=n-v-c:block-Cursor/lCursor,ve:ver35-Cursor,o:hor50-Cursor,i-ci:ver
 if g:mac || g:macvim
 	set guifont=Monaco:h10
 else
-	set guifont=Lucida_Console:h9
+	"set guifont=JetBrains_Mono:h7
+	"set guifont=Consolas:h9
+	"set guifont=Cousine:h9
+	set guifont=Ubuntu_Mono:h10
+	"set guifont=Lucida_Console:h9
 endif
 set guioptions=eihmtbrlaAc
 set history=2000
@@ -230,7 +234,8 @@ set scrollopt=ver,hor,jump
 set showcmd
 set smartindent
 if g:vimrcdebug | echom "Group 2" | endif
-au Bufread,BufNewFile * set ts=4 sts=4 sw=4 tw=0 noet
+au BufNewFile,BufRead * set ts=4 sts=4 sw=4 tw=0 noet
+au BufNewFile,BufRead *.cpp.template,*.h.template set filetype=cpp
 "au BufNewFile,BufRead *.txt,*.doc,*.rtf set spell
 "au Bufread,BufNewFile *.as set filetype=actionscript
 "au Bufread,BufNewFile *.template set filetype=jinja
@@ -306,6 +311,9 @@ if g:vimrcdebug | echom "Group 5" | endif
 autocmd BufEnter * if expand("%:p:h") !~ '^/tmp' | silent! lcd %:p:h | endif
 
 autocmd FileType python set tabstop=4 | set softtabstop=4 | set shiftwidth=4 | set expandtab
+
+" When opening a diff, make sure scrollbind is set immediately
+autocmd VimEnter * if &diff | execute 'windo set scrollbind' | endif
 
 "au FocusGained,BufEnter * :silent! !
 
@@ -413,6 +421,9 @@ inoremap <C-Space> <C-P>
 noremap <F2> <C-O>
 inoremap <F2> <C-O><C-O>
 cnoremap <F2> <C-C><C-O>
+noremap <M-O> <C-O>
+inoremap <M-O> <C-O><C-O>
+cnoremap <M-O> <C-C><C-O>
 noremap <S-F2> <C-I>
 inoremap <S-F2> <C-O><C-I>
 cnoremap <S-F2> <C-C><C-I>
@@ -471,7 +482,7 @@ noremap OB j
 noremap OC l
 noremap OD h
 
-" Alt-Arrow to switch between splits
+" Shift-Arrow to switch between splits
 noremap <S-Up> <C-W><Up><C-W>_
 noremap <S-Down> <C-W><Down><C-W>_
 noremap <S-Left> <C-W><Left><C-W>_
@@ -480,6 +491,15 @@ inoremap <S-Up> <ESC><C-W><Up><C-W>_
 inoremap <S-Down> <ESC><C-W><Down><C-W>_
 inoremap <S-Left> <ESC><C-W><Left><C-W>_
 inoremap <S-Right> <ESC><C-W><Right><C-W>_
+
+" Ctrl-H and Ctrl-L (map these to side scrollwheel) to scroll the screen left and right
+noremap <C-L> 20zh
+noremap <C-H> 20zl
+
+if g:windows
+	" Allow Alt+Space to open the window menu (e.g. for things like Alt+Space M to move the window when it's offscreen)
+	nnoremap <M-Space> :simalt ~<CR>
+endif
 
 " Custom settings for any given computer (i.e. my old Macbook has a lower
 " resolution screen, so I use a smaller font to fit more text
