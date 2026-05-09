@@ -28,7 +28,7 @@ syn keyword unrealSpecifier
     \ Instanced Export NoClear
     \ AdvancedDisplay AssetRegistrySearchable Interp
     \ SimpleDisplay AllowPrivateAccess SkipSerialization
-    \ TextExportTransient NonTransactional
+    \ TextExportTransient NonTransactional Tunable
 
 " ============================================================
 " Common UFUNCTION specifiers
