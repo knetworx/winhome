@@ -1,6 +1,5 @@
 " Unreal Engine macro syntax highlighting
 " Add to ~/.vim/after/syntax/cpp.vim (or source directly)
-if g:vimrcdebug | echom "Running unreal.vim" | endif
 
 " ============================================================
 " Core reflection macros

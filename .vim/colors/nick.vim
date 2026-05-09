@@ -5,8 +5,8 @@ if exists("syntax_on")
 endif
 let g:colors_name = "nick"
 
-hi Comment					guifg=#cc0000											ctermfg=darkred		ctermbg=black
-hi Constant					guifg=#bb00ff							gui=none		ctermfg=darkmagenta	ctermbg=black
+hi Comment					guifg=green4											ctermfg=darkred		ctermbg=black
+hi Constant					guifg=purple							gui=none		ctermfg=darkmagenta	ctermbg=black
 hi Character				guifg=red												ctermfg=red			ctermbg=black
 if (&t_Co > 16)
 	hi DiffAdd										guibg=#002200		gui=none							ctermbg=22
@@ -15,32 +15,32 @@ else
 	hi DiffAdd										guibg=#002200		gui=none							ctermbg=darkgreen
 	hi DiffChange									guibg=#330033		gui=none							ctermbg=darkmagenta
 endif
-hi DiffDelete				guifg=#333333		guibg=#222222		gui=none							ctermbg=darkgray
-hi DiffText										guibg=#000055		gui=none							ctermbg=darkblue
+hi DiffDelete				guifg=#333333		guibg=#171717		gui=none							ctermbg=darkgray
+hi DiffText										guibg=#000077		gui=none							ctermbg=darkblue
 "hi Directory				guifg=cyan												ctermfg=cyan		ctermbg=black
 hi Error					guifg=white			guibg=red							ctermfg=white		ctermbg=red
 hi Exception				guifg=orange											ctermfg=darkyellow
 hi Folded					guifg=gray			guibg=#004400						ctermfg=white		ctermbg=darkgray
 hi FoldColumn				guifg=darkgreen		guibg=#222222						ctermfg=darkgreen	ctermbg=darkgray
-hi Function					guifg=#999999											ctermfg=gray		ctermbg=black
+hi Function					guifg=#eb660e											ctermfg=gray		ctermbg=black
 hi Identifier				guifg=#5555ff							gui=none		ctermfg=blue		ctermbg=black
-hi Include					guifg=magenta											ctermfg=magenta		ctermbg=black
-hi Label					guifg=cyan												ctermfg=cyan		ctermbg=black
+hi Include					guifg=#999999											ctermfg=magenta		ctermbg=black
+hi Label					guifg=yellow											ctermfg=cyan		ctermbg=black
 "hi LineComment				guifg=#777777
 hi LineNr					guifg=#555555
 hi MatchParen				guifg=white			guibg=#000000						ctermfg=white		ctermbg=black
-hi Normal					guifg=#BBBBBB		guibg=#000000						ctermfg=white		ctermbg=black			
-hi Number					guifg=red												ctermfg=red			ctermbg=black
+hi Normal					guifg=#doce7c		guibg=#1e1e1e						ctermfg=white		ctermbg=black			
+hi Number					guifg=#86aa90												ctermfg=red			ctermbg=black
 hi PreProc					guifg=#00ff00											ctermfg=green		ctermbg=black
-hi Operator					guifg=green												ctermfg=green		ctermbg=black
+hi Operator					guifg=lightblue3										ctermfg=green		ctermbg=black
 hi Search						               guibg=#c0c000											ctermbg=yellow
 hi SpecialComment			guifg=darkcyan											ctermfg=darkcyan
 hi SpecialKey				guifg=#555555											ctermfg=darkgray
-hi Statement				guifg=yellow							gui=none		ctermfg=yellow		ctermbg=black
+hi Statement				guifg=#3f8cbd							gui=bold		ctermfg=yellow		ctermbg=black
 hi StatusLine				guifg=#ffff00		guibg=#0000ff		gui=none		ctermfg=yellow		ctermbg=blue
-hi String					guifg=magenta											ctermfg=magenta		ctermbg=black
-hi Todo						guifg=#000080		guibg=#c0c000						ctermfg=red			ctermbg=yellow
-hi Type						guifg=yellow							gui=none		ctermfg=yellow		ctermbg=black
+hi String					guifg=#c68860											ctermfg=magenta		ctermbg=black
+hi Todo						guifg=#000080		guibg=#c0c000		gui=bold		ctermfg=red			ctermbg=yellow
+hi Type						guifg=#3f8cbd							gui=bold		ctermfg=yellow		ctermbg=black
 hi Unknown					guifg=black			guibg=yellow		gui=bold		ctermfg=black		ctermbg=yellow			cterm=bold
 hi Visual										guibg=#004400											ctermbg=darkgreen
 
@@ -129,12 +129,14 @@ hi cComment2String		guifg=gray											ctermfg=gray
 hi cCommentString		guifg=gray											ctermfg=gray
 hi cErrInBracket		guifg=fg			guibg=bg			gui=none	ctermfg=fg		ctermbg=bg	cterm=none
 hi cErrInParen			guifg=white			guibg=red			gui=bold	ctermfg=white	ctermbg=red	cterm=bold
+"hi cType guifg=#3f8cbd gui=bold
 " And some keywords I added...
 hi link cMyKeywords Identifier
 hi link cMyKeywords2 Normal
 hi link cLibKeywords Directory
 
 " C++ Highlighting (extends from C Highlighting)
+hi cppAccess guifg=#3f8cbd gui=bold
 hi link cppMinMax Operator
 hi link cppExceptions Exception
 " Again, syntax elements I created
@@ -154,6 +156,7 @@ hi link cppAccess Label
 hi cppPragmaRegion		guifg=black			guibg=gray			gui=bold		ctermfg=black	ctermbg=gray	cterm=bold
 hi cppPRKeywords		guifg=blue			guibg=gray			gui=bold		ctermfg=blue	ctermbg=gray	cterm=bold
 hi cppDEBUG									guibg=#333333
+hi cppUEType guifg=yellow gui=bold
 
 hi dosbatchPath			guifg=darkgreen											ctermfg=darkgreen
 
