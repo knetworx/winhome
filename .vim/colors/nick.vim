@@ -30,9 +30,9 @@ hi Label					guifg=yellow											ctermfg=cyan		ctermbg=black
 hi LineNr					guifg=#555555
 hi MatchParen				guifg=white			guibg=#000000						ctermfg=white		ctermbg=black
 hi Normal					guifg=#doce7c		guibg=#1e1e1e						ctermfg=white		ctermbg=black			
-hi Number					guifg=#86aa90												ctermfg=red			ctermbg=black
+hi Number					guifg=#86aa90											ctermfg=red			ctermbg=black
 hi PreProc					guifg=#00ff00											ctermfg=green		ctermbg=black
-hi Operator					guifg=lightblue3										ctermfg=green		ctermbg=black
+hi Operator					guifg=#559fd1											ctermfg=green		ctermbg=black
 hi Search						               guibg=#c0c000											ctermbg=yellow
 hi SpecialComment			guifg=darkcyan											ctermfg=darkcyan
 hi SpecialKey				guifg=#555555											ctermfg=darkgray
@@ -223,3 +223,6 @@ hi luaConstant				guifg=purple3
 hi luaFunction				guifg=yellow
 hi luaVolitionConstant		guifg=#770077
 hi luaVolitionSysConstant	guifg=blue
+
+hi unrealSpecifier guifg=#a96a1e
+hi link unrealGenerated Macro
