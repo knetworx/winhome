@@ -124,6 +124,7 @@ hi link cCppParen Operator
 hi link cCppString String
 hi link cParen Operator
 hi link cLabel Label
+hi cUserLabel guifg=#a96a1e
 hi link cUserCont Operator
 hi cComment2String		guifg=gray											ctermfg=gray
 hi cCommentString		guifg=gray											ctermfg=gray

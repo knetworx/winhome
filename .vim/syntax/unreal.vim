@@ -25,7 +25,7 @@ syn keyword unrealSpecifier
     \ BlueprintAssignable BlueprintCallable BlueprintPure
     \ BlueprintImplementableEvent BlueprintNativeEvent
     \ BlueprintAuthorityOnly BlueprintCosmetic
-    \ Category DisplayName ToolTip
+    \ DisplayName ToolTip
     \ Replicated ReplicatedUsing NotReplicated
     \ Transient SaveGame Config GlobalConfig
     \ Instanced Export NoClear
@@ -92,6 +92,12 @@ syn keyword unrealLog
     \ UE_LOG UE_LOGFMT UE_CLOG
 
 " ============================================================
+" For some reason, these get their own special colouring in VS
+" ============================================================
+syn keyword unrealSpecialType
+    \ Category Bitmask
+
+" ============================================================
 " Highlights
 " ============================================================
 hi def link unrealMacro      Macro
@@ -101,3 +107,4 @@ hi def link unrealMetaKey    Type
 hi def link unrealDelegate   Macro
 hi def link unrealAssert     Debug
 hi def link unrealLog        Function
+hi def link unrealSpecialType Label
