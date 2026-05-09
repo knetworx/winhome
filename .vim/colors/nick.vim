@@ -225,4 +225,5 @@ hi luaVolitionConstant		guifg=#770077
 hi luaVolitionSysConstant	guifg=blue
 
 hi unrealSpecifier guifg=#a96a1e
+hi link unrealMetaKey unrealSpecifier
 hi link unrealGenerated Macro

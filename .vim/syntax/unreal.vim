@@ -1,5 +1,5 @@
 " Unreal Engine macro syntax highlighting
-" Add to ~/.vim/after/syntax/cpp.vim (or source directly)
+" Place in ~/.vim/after/syntax/cpp.vim
 
 " ============================================================
 " Core reflection macros
@@ -16,50 +16,68 @@ syn keyword unrealGenerated
     \ GENERATED_UINTERFACE_BODY GENERATED_IINTERFACE_BODY
 
 " ============================================================
-" Common UPROPERTY specifiers
+" Top-level specifiers (UPROPERTY, UFUNCTION, UCLASS, USTRUCT)
 " ============================================================
 syn keyword unrealSpecifier
     \ EditAnywhere EditDefaultsOnly EditInstanceOnly EditFixedSize
     \ VisibleAnywhere VisibleDefaultsOnly VisibleInstanceOnly
     \ BlueprintReadWrite BlueprintReadOnly BlueprintGetter BlueprintSetter
+    \ BlueprintAssignable BlueprintCallable BlueprintPure
+    \ BlueprintImplementableEvent BlueprintNativeEvent
+    \ BlueprintAuthorityOnly BlueprintCosmetic
     \ Category DisplayName ToolTip
     \ Replicated ReplicatedUsing NotReplicated
     \ Transient SaveGame Config GlobalConfig
     \ Instanced Export NoClear
     \ AdvancedDisplay AssetRegistrySearchable Interp
     \ SimpleDisplay AllowPrivateAccess SkipSerialization
-    \ TextExportTransient NonTransactional Tunable
-
-" ============================================================
-" Common UFUNCTION specifiers
-" ============================================================
-syn keyword unrealSpecifier
-    \ BlueprintCallable BlueprintPure BlueprintImplementableEvent
-    \ BlueprintNativeEvent BlueprintAuthorityOnly BlueprintCosmetic
+    \ TextExportTransient NonTransactional
     \ Server Client NetMulticast Reliable Unreliable WithValidation
-    \ Exec CallInEditor Category DisplayName
-    \ SealedEvent ServiceRequest ServiceResponse
-    \ CustomThunk
-
-" ============================================================
-" Common UCLASS / USTRUCT specifiers
-" ============================================================
-syn keyword unrealSpecifier
+    \ Exec CallInEditor SealedEvent ServiceRequest ServiceResponse CustomThunk
     \ Blueprintable NotBlueprintable BlueprintType NotBlueprintType
-    \ Abstract Transient Within MinimalAPI
-    \ HideDropdown HideCategories ShowCategories
+    \ Abstract Within MinimalAPI Const NoExport
+    \ HideDropdown HideCategories ShowCategories AutoExpandCategories AutoCollapseCategories
     \ ClassGroup CollapseCategories DontCollapseCategories
     \ ConversionRoot CustomConstructor DefaultToInstanced
     \ Deprecated NotPlaceable Placeable
+    \ ScriptName DevelopmentOnly
 
 " ============================================================
-" Delegate macros
+" Meta key specifiers (inside meta=(...))
+" ============================================================
+syn keyword unrealMetaKey
+    \ WorldContext DefaultToSelf HidePin ExpandEnumAsExecs
+    \ DisplayName ShortToolTip OverrideNativeName
+    \ EditCondition EditConditionHides InlineEditConditionToggle NoResetToDefault
+    \ ClampMin ClampMax UIMin UIMax ArrayClamp NoSpinbox
+    \ AllowedClasses AllowedTypes AllowAbstract MustImplement MetaClass UseComponentPicker
+    \ ShowDisplayNames ShowOnlyInnerProperties
+    \ AlwaysAsPin NeverAsPin PinShownByDefault PinHiddenByDefault CustomizeProperty
+    \ BindWidget BindWidgetOptional BindWidgetAnim
+    \ AssetBundles IncludeAssetBundles Untracked
+    \ Categories Bitmask BitmaskEnum UseEnumValuesAsMaskValuesInEditor
+    \ FilePathFilter RelativeToGameDir
+    \ RowType DataTablePin
+    \ CompactNodeTitle ReturnDisplayName
+    \ DeterminesOutputType DynamicOutputParam AutoCreateRefTerm
+    \ ArrayParm ArrayTypeDependentParams InternalUseParam
+    \ BlueprintThreadSafe NotBlueprintThreadSafe BlueprintInternalUseOnly
+    \ BlueprintAutocast BlueprintSpawnableComponent
+    \ CommutativeAssociativeBinaryOperator CallableWithoutWorldContext
+    \ ChildCanTick ChildCannotTick
+    \ IgnoreCategoryKeywordsInSubclasses ComponentWrapperClass PrioritizeCategories
+    \ DisableSplitPin HasNativeMake HasNativeBreak
+    \ DeprecationMessage Experimental
+    \ AllowPrivateAccess Tunable
+
+" ============================================================
+" Delegate declaration macros
 " ============================================================
 syn match unrealDelegate
     \ "\<DECLARE_\(DYNAMIC_\)\?\(MULTICAST_\)\?\(SPARSE_\)\?DELEGATE\(_\w\+\)\?"
 
 " ============================================================
-" Check / ensure / log macros
+" Assert / ensure / verify
 " ============================================================
 syn keyword unrealAssert
     \ check checkf checkCode checkNoEntry checkNoReentry checkNoRecursion
@@ -67,15 +85,19 @@ syn keyword unrealAssert
     \ verify verifyf
     \ checkSlow checkfSlow verifySlow
 
+" ============================================================
+" Logging
+" ============================================================
 syn keyword unrealLog
     \ UE_LOG UE_LOGFMT UE_CLOG
 
 " ============================================================
-" Highlights — tweak colours to taste
+" Highlights
 " ============================================================
 hi def link unrealMacro      Macro
 hi def link unrealGenerated  Special
 hi def link unrealSpecifier  Type
+hi def link unrealMetaKey    Type
 hi def link unrealDelegate   Macro
 hi def link unrealAssert     Debug
 hi def link unrealLog        Function
