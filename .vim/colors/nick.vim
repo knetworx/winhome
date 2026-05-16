@@ -9,14 +9,14 @@ hi Comment					guifg=green4											ctermfg=darkred		ctermbg=black
 hi Constant					guifg=purple							gui=none		ctermfg=darkmagenta	ctermbg=black
 hi Character				guifg=red												ctermfg=red			ctermbg=black
 if (&t_Co > 16)
-	hi DiffAdd										guibg=#002200		gui=none							ctermbg=22
-	hi DiffChange									guibg=#330033		gui=none							ctermbg=17
+	hi DiffAdd										guibg=#112211		gui=none							ctermbg=22
+	hi DiffChange									guibg=#220022		gui=none							ctermbg=17
 else
 	hi DiffAdd										guibg=#002200		gui=none							ctermbg=darkgreen
 	hi DiffChange									guibg=#330033		gui=none							ctermbg=darkmagenta
 endif
-hi DiffDelete				guifg=#333333		guibg=#171717		gui=none							ctermbg=darkgray
-hi DiffText										guibg=#000077		gui=none							ctermbg=darkblue
+hi DiffDelete				guifg=#333333		guibg=#111111		gui=none							ctermbg=darkgray
+hi DiffText										guibg=#000055		gui=none							ctermbg=darkblue
 "hi Directory				guifg=cyan												ctermfg=cyan		ctermbg=black
 hi Error					guifg=white			guibg=red							ctermfg=white		ctermbg=red
 hi Exception				guifg=orange											ctermfg=darkyellow

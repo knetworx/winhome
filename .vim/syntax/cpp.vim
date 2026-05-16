@@ -49,7 +49,7 @@ syn match cppCustDefines "\<[A-Z_][A-Z0-9_]\{2,\}\>"
 " ============================================================
 " Functions: identifier immediately before ( or <T>(
 " ============================================================
-syn match cppFunctions "\i\+\(\(<\i\+>\)\?(\)\@=" contains=cppCast
+syn match cppFunctions "\<[A-Za-z_]\i*[a-z]\i*\(\(<\i\+>\)\?(\)\@=" contains=cppCast
 " Function pointer:  (*FuncName)(args)
 syn match cppFunctions "\((\*\)\@<=\(\i\+\)\()\s*(\)\@="
 
