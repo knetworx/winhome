@@ -2,6 +2,7 @@
 " Language:	C++
 " Maintainer:	Nick Heilmann
 " Based on:	Ken Shan <ccshan@post.harvard.edu>
+" Updated:	2025 — C++11/14/17/20/23 keywords, attributes, binary literals
 
 if version < 600
   syntax clear
@@ -35,6 +36,36 @@ syn keyword cppBoolean		true false
 syn keyword cRepeat		foreach
 
 " ============================================================
+" C++11 keywords
+" ============================================================
+syn keyword cppType		decltype noexcept char16_t char32_t
+syn keyword cppType		alignas alignof
+syn keyword cppStatement	static_assert
+syn keyword cppStorageClass	thread_local constexpr
+" nullptr is its own keyword constant (type nullptr_t)
+syn keyword cppNullptr		nullptr
+
+" ============================================================
+" C++20 keywords
+" ============================================================
+syn keyword cppStructure	concept
+syn keyword cppStatement	requires co_await co_yield co_return
+syn keyword cppStorageClass	consteval constinit
+syn keyword cppType		char8_t
+
+" ============================================================
+" C++11 attributes: [[nodiscard]], [[maybe_unused]], etc.
+" ============================================================
+syn match cppAttribute		"\[\[.\{-}\]\]"
+
+" ============================================================
+" C++14: binary integer literals (0b0101), with optional digit separators
+" Digit separators (') within decimal/hex are handled approximately —
+" the existing cNumber patterns in c.vim still apply for those.
+" ============================================================
+syn match cNumber display contained "0[bB][01][01']*\(u\=l\{0,2}\|ll\=u\)\>"
+
+" ============================================================
 " UE type prefixes: A=Actor, U=UObject, F=struct, E=enum, T=template, I=interface
 " Matches e.g. AActor, UObject, FName, FVector, ENetMode, TArray, IInterface
 " Does NOT match plain capitalized variables like Target, Event, WorldContext
@@ -58,9 +89,27 @@ syn match cppFunctions "\((\*\)\@<=\(\i\+\)\()\s*(\)\@="
 " ============================================================
 syn match   cppStdBoostAccess "\<\i\+\(::\i\+\)\+\>" contains=ALL
 syn keyword cppStdBoost contained
-    \ std boost string vector unordered_map unordered_set map set bitset
-    \ shared_ptr stringstream istringstream ostringstream iterator
-    \ const_iterator cout endl runtime_error cerr list value_type ostream
+    \ std boost
+    \ string string_view wstring
+    \ vector array deque list forward_list
+    \ map unordered_map multimap unordered_multimap
+    \ set unordered_set multiset unordered_multiset
+    \ bitset span
+    \ optional variant any monostate expected
+    \ tuple pair
+    \ shared_ptr unique_ptr weak_ptr make_shared make_unique
+    \ function move forward declval exchange
+    \ atomic mutex lock_guard unique_lock shared_mutex scoped_lock
+    \ thread jthread
+    \ stringstream istringstream ostringstream
+    \ iterator const_iterator
+    \ cout cerr endl
+    \ runtime_error logic_error out_of_range invalid_argument
+    \ ostream istream
+    \ byte
+    \ filesystem path
+    \ chrono
+    \ future promise async
 
 " ============================================================
 " Build / preprocessor
@@ -98,9 +147,11 @@ if version >= 508 || !exists("did_cpp_syntax_inits")
   HiLink cppStructure	Structure
   HiLink cppNumber	Number
   HiLink cppBoolean	Boolean
+  HiLink cppNullptr	Constant
   HiLink cppBuildName	cppType
   HiLink cppStdBoost	cppCustDefines
   HiLink cppMinMax	Operator
+  HiLink cppAttribute	Special
 
   HiLink cppUEType	Type
   HiLink cppCustDefines	Constant
